@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from .models import LernModulesModel
+from .serializers import LernModuleSerializer
 
-# Create your views here.
+
+class LernModuleViewSet(ModelViewSet):
+    queryset = LernModulesModel.objects.all()
+    serializer_class = LernModuleSerializer
